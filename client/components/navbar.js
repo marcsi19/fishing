@@ -12,6 +12,27 @@ const Navbar = ({handleClick, isLoggedIn}) => (
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
+          <Link to="/" className="nav-main">
+            Nyitólap
+          </Link>
+          <Link to="/reference" className="nav-main">
+            Referencia
+          </Link>
+          <Link to="/kieg" className="nav-main">
+            Fékhang-kiegészítők
+          </Link>
+          <Link to="/service" className="nav-main">
+            Orsó szerviz
+          </Link>
+          <Link to="/irasok" className="nav-main">
+            Írások
+          </Link>
+          <Link to="/gallery" className="nav-main">
+            Galéria
+          </Link>
+          <Link to="/partners" className="nav-main">
+            Partnerek
+          </Link>
           <Link to="/home" className="nav-main">
             Home
           </Link>
@@ -55,7 +76,7 @@ const Navbar = ({handleClick, isLoggedIn}) => (
  */
 const mapState = state => {
   return {
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.users.user.id
   }
 }
 

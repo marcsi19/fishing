@@ -3,7 +3,7 @@ const db = require('../db')
 
 const Gallery = db.define('gallery', {
   imageUrl: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     defaultValue: '/favicon.ico'
   },
   title: {
@@ -12,6 +12,16 @@ const Gallery = db.define('gallery', {
   },
   description: {
     type: Sequelize.TEXT
+  },
+  category: {
+    type: Sequelize.STRING,
+    validate: {
+      isIn: [['Galeria', 'Irasok', 'Referencia', 'Fekhang', 'Szerviz']]
+    }
+  },
+  homepage: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   }
 })
 

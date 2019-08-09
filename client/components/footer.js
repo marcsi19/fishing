@@ -36,7 +36,7 @@ const Footer = ({handleClick, isLoggedIn}) => (
  */
 const mapState = state => {
   return {
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.users.user.id
   }
 }
 

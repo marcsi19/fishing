@@ -1,16 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 /**
  * COMPONENT
  */
 export const UserHome = props => {
-  const {email} = props
-
+  const {email, admin} = props
   return (
-    <div>
+    <div className="homepage">
       <h3>Welcome, {email}</h3>
+      {admin && (
+        <h2>
+          <Link to="/addItem" className="addprod_buttom">
+            Add a new product
+          </Link>
+        </h2>
+      )}
+      {/* {admin && (
+        <h2>
+          <Link to="/userList" className="google buttons usersb">
+            Manage DonutJar users
+          </Link>
+        </h2>
+      )} */}
     </div>
   )
 }
@@ -20,7 +34,9 @@ export const UserHome = props => {
  */
 const mapState = state => {
   return {
-    email: state.user.email
+    email: state.users.user.email,
+    admin: state.users.user.adminStatus,
+    address: state.users.user.address
   }
 }
 

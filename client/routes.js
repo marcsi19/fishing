@@ -5,7 +5,10 @@ import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
 import {me} from './store'
 import Gallery from './components/gallery'
+import SinglePic from './components/singleGalleryPic'
 import Home from './components/home'
+import AddItem from './components/addItem'
+import EditPic from './components/editPic'
 
 /**
  * COMPONENT
@@ -23,13 +26,17 @@ class Routes extends Component {
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path="/home" component={UserHome} />
         <Route exact path="/gallery" component={Gallery} />
+        <Route exact path="/gallery/:id" component={SinglePic} />
         <Route exact path="/" component={Home} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
+            <Route path="/gallery/:id/editPic" component={EditPic} />
             <Route path="/gallery" component={Gallery} />
             <Route path="/home" component={UserHome} />
+            <Route path="/addItem" component={AddItem} />
             <Route path="/" component={Home} />
           </Switch>
         )}
@@ -48,7 +55,7 @@ const mapState = state => {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
     // Otherwise, state.user will be an empty object, and state.user.id will be falsey
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.users.user.id
   }
 }
 

@@ -121,7 +121,7 @@
 .image-gallery-play-button:hover::before,
 .image-gallery-left-nav:hover::before,
 .image-gallery-right-nav:hover::before {
-  color: #337ab7;
+  color: #7e8388;
 }
 @media (max-width: 768px) {
   .image-gallery-fullscreen-button:hover::before,

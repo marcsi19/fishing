@@ -8,24 +8,32 @@ export class Home extends Component {
   render() {
     const images = [
       {
-        original: 'fishing11.jpg'
+        original: 'fishing2.jpg'
       },
       {
-        original: 'fishing22.jpg'
+        original: 'fishing1.jpg'
       },
       {
-        original: 'fishing33.jpg'
+        original: 'fishing3.jpg'
       }
     ]
     return (
-      <div className="slide-showing">
-        <ImageGallery
-          items={images}
-          showThumbnails={false}
-          showFullscreenButton={false}
-          showPlayButton={false}
-          autoPlay={true}
-        />
+      <div>
+        <div className="slide-showing">
+          <div className="slide-showing-intro">
+            <a href="#features">Bemutatkozás</a>
+          </div>
+          <ImageGallery
+            items={images}
+            showThumbnails={false}
+            showFullscreenButton={false}
+            showPlayButton={false}
+            // autoPlay={true}
+          />
+        </div>
+        <div id="features" className="features">
+          <p>Hi there! it is my website have a look at it! </p>
+        </div>
       </div>
     )
   }

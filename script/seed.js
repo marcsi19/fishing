@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User, Gallery} = require('../server/db/models')
 
 async function seed() {
   await db.sync({force: true})
@@ -15,8 +15,28 @@ async function seed() {
       adminStatus: false
     })
   ])
+  const gallery = await Promise.all([
+    Gallery.create({
+      imageUrl: '/fishing1.jpg',
+      title: 'Fishing',
+      description: `This is working for sure, try it out, you won't regret it`,
+      category: 'Galeria'
+    }),
+    Gallery.create({
+      imageUrl: '/fishing2.jpg',
+      title: 'Reel',
+      description: `This is working for sure, try it out, you won't regret it`,
+      category: 'Galeria'
+    }),
+    Gallery.create({
+      imageUrl: '/fishing3.jpg',
+      title: 'Sunset',
+      description: `This is working for sure, try it out, you won't regret it`,
+      category: 'Galeria'
+    })
+  ])
 
-  console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${users.length} users and ${gallery.length} gellery`)
   console.log(`seeded successfully`)
 }
 
