@@ -9,7 +9,7 @@ import SinglePic from './components/singleGalleryPic'
 import Home from './components/home'
 import AddItem from './components/addItem'
 import EditPic from './components/editPic'
-
+import AllUsers from './components/allUsers'
 /**
  * COMPONENT
  */
@@ -37,6 +37,7 @@ class Routes extends Component {
             <Route path="/gallery" component={Gallery} />
             <Route path="/home" component={UserHome} />
             <Route path="/addItem" component={AddItem} />
+            <Route path="/userList" component={AllUsers} />
             <Route path="/" component={Home} />
           </Switch>
         )}

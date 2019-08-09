@@ -328,3 +328,22 @@ form_cat {
   color: rgb(88, 86, 86);
   font-weight: bold;
 }
+
+/* USERLIST */
+
+.admin_b {
+  height: 2em;
+  width: 12em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-size: 90%;
+}
+
+.top-padding {
+  padding: 3em;
+}
+
+/* admin_r {
+  padding: 1em;
+} */

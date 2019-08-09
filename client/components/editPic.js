@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {editItem, selectPicById} from '../store/gallery'
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 
 const defaultState = {item: {}}
 

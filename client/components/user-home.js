@@ -13,18 +13,18 @@ export const UserHome = props => {
       <h3>Welcome, {email}</h3>
       {admin && (
         <h2>
-          <Link to="/addItem" className="addprod_buttom">
+          <Link to="/addItem" className="addprod_button">
             Add a new product
           </Link>
         </h2>
       )}
-      {/* {admin && (
+      {admin && (
         <h2>
-          <Link to="/userList" className="google buttons usersb">
-            Manage DonutJar users
+          <Link to="/userList" className="addprod_button">
+            Manage Users
           </Link>
         </h2>
-      )} */}
+      )}
     </div>
   )
 }
