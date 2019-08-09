@@ -282,3 +282,49 @@ form_cat {
   padding: 0;
   font-size: 100%;
 }
+
+/* SINGLEGALLERYPIC */
+
+.single-container {
+  margin: 5em auto;
+  display: flex;
+  justify-content: center;
+  color: gray;
+  text-align: center;
+  text-decoration: none;
+}
+
+.single-pic-title {
+  align-self: center;
+
+  font-size: 150%;
+  margin-bottom: 2em;
+}
+#single-pic {
+  height: 40em;
+  width: 60em;
+  align-self: center;
+}
+
+#single-pic img {
+  object-fit: fill;
+}
+
+.single-pic p {
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+}
+
+.single-pic-back {
+  text-align: start;
+  align-items: flex-start;
+  text-decoration: none;
+  color: gray;
+}
+
+.edit-but {
+  font-size: 60%;
+  text-decoration: none;
+  color: rgb(88, 86, 86);
+  font-weight: bold;
+}

@@ -6,20 +6,10 @@ import {selectPicById} from '../store/gallery'
 export class SinglePic extends Component {
   constructor() {
     super()
-    // this.submitHandler = this.submitHandler.bind(this)
   }
   componentDidMount() {
     this.props.selectPicById(this.props.match.params.id)
   }
-  // async submitHandler(e) {
-  //   e.preventDefault()
-  //   const item = {
-  //     number: +e.target.number.value,
-  //     product: this.props.selectedProduct
-  //   }
-  //   await this.props.addCartItem(item)
-  //   this.props.postToCart(this.props.cart)
-  // }
 
   render() {
     const {title, description, imageUrl} = {
@@ -29,23 +19,32 @@ export class SinglePic extends Component {
     const selectPic = {...this.props.selectedPic}
     // const id = this.props.match.params.id
     return (
-      <div className="container">
+      <div className="single-container">
+        <Link to="/gallery" className="single-pic-back">
+          Vissza
+        </Link>
+
         <ul className="single-pic">
-          <p />
-          <h3 className="single-pic-title">{title}</h3>
+          <h3 className="single-pic-title">
+            {title}
+            {admin && (
+              <h2>
+                <Link
+                  to={`/gallery/${selectPic.id}/editPic`}
+                  className="edit-but"
+                >
+                  Edit
+                </Link>
+              </h2>
+            )}
+          </h3>
+
           <img id="single-pic" src={imageUrl} />
           <p>{description}</p>
+          <Link to="/gallery" className="single-pic-back">
+            Vissza
+          </Link>
         </ul>
-        {admin && (
-          <h2>
-            <Link
-              to={`/gallery/${selectPic.id}/editPic`}
-              className="google buttons"
-            >
-              Edit
-            </Link>
-          </h2>
-        )}
       </div>
     )
   }
