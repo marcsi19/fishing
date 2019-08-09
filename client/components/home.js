@@ -32,7 +32,7 @@ export class Home extends Component {
           />
         </div>
         <div id="features" className="features">
-          <p>Hi there! it is my website have a look at it! </p>
+          <p>Welcome!</p>
         </div>
       </div>
     )
