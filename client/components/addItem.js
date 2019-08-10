@@ -89,21 +89,21 @@ class AddItem extends React.Component {
               Szerviz
             </label>
           </div> */}
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">Cím</label>
           <input
             type="text"
             name="title"
             className="textbox"
             onChange={this.handleChange}
           />
-          <label htmlFor="description">Description: </label>
+          <label htmlFor="description">Leírás: </label>
           <textarea
             type="text"
             name="description"
             className="textbox_desc"
             onChange={this.handleChange}
           />
-          <label htmlFor="imageUrl">Image url: </label>
+          <label htmlFor="imageUrl">Kép url: </label>
           <input
             type="text"
             name="imageUrl"
@@ -111,7 +111,7 @@ class AddItem extends React.Component {
             onChange={this.handleChange}
           />
           <div className="radio">
-            <p>Boritokep</p>
+            <p>Borítókép</p>
             <label>
               <input
                 type="radio"
@@ -136,7 +136,7 @@ class AddItem extends React.Component {
           </div>
 
           <label htmlFor="category" className="form_cat">
-            Kategoria (Galeria, Irasok, Referencia, Fekhang, Szerviz)
+            Kategória (Galeria, Irasok, Referencia, Fekhang, Szerviz)
           </label>
           <textarea
             type="text"
@@ -145,7 +145,7 @@ class AddItem extends React.Component {
             onChange={this.handleChange}
           />
           <button type="submit" className="buttons">
-            submit
+            Feltöltés
           </button>
         </form>
       </div>

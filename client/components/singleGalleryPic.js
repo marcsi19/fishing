@@ -33,7 +33,7 @@ export class SinglePic extends Component {
                   to={`/gallery/${selectPic.id}/editPic`}
                   className="edit-but"
                 >
-                  Edit
+                  Szerkesztés
                 </Link>
               </h2>
             )}

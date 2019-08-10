@@ -98,7 +98,7 @@ class EditPic extends React.Component {
             Szerviz
           </label>
         </div> */}
-          <label htmlFor="title">Title: </label>
+          <label htmlFor="title">Cím: </label>
           <input
             type="text"
             name="title"
@@ -106,7 +106,7 @@ class EditPic extends React.Component {
             onChange={this.handleChange}
             placeholder={title}
           />
-          <label htmlFor="description">Description: </label>
+          <label htmlFor="description">Leírás: </label>
           <input
             type="text"
             name="description"
@@ -114,7 +114,7 @@ class EditPic extends React.Component {
             onChange={this.handleChange}
             placeholder={description}
           />
-          <label htmlFor="imageUrl">Image url: </label>
+          <label htmlFor="imageUrl">Kép url: </label>
           <input
             type="text"
             name="imageUrl"
@@ -123,7 +123,7 @@ class EditPic extends React.Component {
             placeholder={imageUrl}
           />
           <div className="radio">
-            <p>Boritokep</p>
+            <p>Boritokép</p>
             <label>
               <input
                 type="radio"
@@ -148,7 +148,7 @@ class EditPic extends React.Component {
           </div>
 
           <label htmlFor="category" className="form_cat">
-            Kategoria (Galeria, Irasok, Referencia, Fekhang, Szerviz)
+            Kategória (Galeria, Irasok, Referencia, Fekhang, Szerviz)
           </label>
           <textarea
             type="text"
@@ -158,7 +158,7 @@ class EditPic extends React.Component {
             placeholder={category}
           />
           <button type="submit" className="buttons">
-            submit
+            Jóváhagyás
           </button>
         </form>
       </div>

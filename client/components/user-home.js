@@ -14,14 +14,14 @@ export const UserHome = props => {
       {admin && (
         <h2>
           <Link to="/addItem" className="addprod_button">
-            Add a new product
+            Kép hozzáadása
           </Link>
         </h2>
       )}
       {admin && (
         <h2>
           <Link to="/userList" className="addprod_button">
-            Manage Users
+            Felhasznalók kezelése
           </Link>
         </h2>
       )}

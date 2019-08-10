@@ -22,7 +22,7 @@ const Navbar = ({handleClick, isLoggedIn}) => (
             Fékhang-kiegészítők
           </Link>
           <Link to="/service" className="nav-main">
-            Orsó szerviz
+            Orsó szervíz
           </Link>
           <Link to="/irasok" className="nav-main">
             Írások
