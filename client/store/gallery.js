@@ -85,7 +85,7 @@ export const editItem = (id, item) => async dispatch => {
 
 export const deletePic = picId => async dispatch => {
   const {data: pic} = await axios.delete(`/api/gallery/${picId}`)
-  dispatch(removepic(pic))
+  dispatch(removepic(picId))
 }
 
 /**
@@ -98,7 +98,7 @@ export const galleryReducer = (state = defaultGallery, action) => {
     case SELECT_PIC:
       return {...state, pic: action.pic}
     case POST_ITEM:
-      return {...state, gallery: [...state.gallery, action.pic]}
+      return {...state, gallery: [...state.gallery, action.item]}
     case PUT_ITEM:
       const itemUpdated = state.gallery.map(
         pic => (pic !== action.item ? gallery : {...gallery, ...action.item})

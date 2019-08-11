@@ -52,11 +52,9 @@ export class SinglePic extends Component {
 
           <img id="single-pic" src={imageUrl} />
           <p>{description}</p>
-          <Link to={`/${selectPic.category}`} className="single-pic-back">
-            Vissza
-          </Link>
+
           <h3 className="single-pic-title" />
-          {admin && (
+          {admin ? (
             <h2>
               <Link
                 className="edit-but delete-but"
@@ -66,6 +64,10 @@ export class SinglePic extends Component {
                 Delete
               </Link>
             </h2>
+          ) : (
+            <Link to={`/${selectPic.category}`} className="single-pic-back">
+              Vissza
+            </Link>
           )}
         </ul>
       </div>

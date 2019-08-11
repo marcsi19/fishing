@@ -11,6 +11,9 @@ import AddItem from './components/addItem'
 import EditPic from './components/editPic'
 import AllUsers from './components/allUsers'
 import Irasok from './components/irasok'
+import Fekhang from './components/fekhang'
+import Referencia from './components/referencia'
+import Szerviz from './components/szerviz'
 
 // import {Gallery, Irasok, , Home, AllUsers} from './components/index'
 /**
@@ -32,6 +35,9 @@ class Routes extends Component {
         <Route path="/home" component={UserHome} />
         <Route exact path="/galeria" component={Gallery} />
         <Route path="/irasok" component={Irasok} />
+        <Route path="/fekhang" component={Fekhang} />
+        <Route path="/referencia" component={Referencia} />
+        <Route path="/szerviz" component={Szerviz} />
         <Route exact path="/gallery/:id" component={SinglePic} />
         <Route exact path="/" component={Home} />
         {isLoggedIn && (

@@ -360,11 +360,30 @@ form_cat {
 }
 
 .delete-but {
+  margin-top: 2em;
   /* margin-left: 6em; */
   color: rgb(134, 24, 24);
   font-size: 1em;
 }
 
+/* USERHOME */
+
+.homepage {
+  margin: 2em;
+  margin-top: 5em;
+  /* color: gray; */
+}
+
+.addprod_button {
+  text-decoration: none;
+  color: gray;
+}
+
+.addprod_button:hover,
+.addprod_button:link {
+  text-decoration: none;
+  color: black;
+}
 /* USERLIST */
 
 .admin_b {

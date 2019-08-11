@@ -46,14 +46,14 @@ const Navbar = ({handleClick, isLoggedIn}) => (
           <Link to="/" className="nav-main">
             Nyitólap
           </Link>
-          <Link to="/reference" className="nav-main">
+          <Link to="/referencia" className="nav-main">
             Referencia
           </Link>
-          <Link to="/kieg" className="nav-main">
+          <Link to="/fekhang" className="nav-main">
             Fékhang-kiegészítők
           </Link>
-          <Link to="/service" className="nav-main">
-            Orsó szerviz
+          <Link to="/szerviz" className="nav-main">
+            Orsó szervíz
           </Link>
           <Link to="/irasok" className="nav-main">
             Írások

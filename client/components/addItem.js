@@ -6,23 +6,29 @@ import {Link} from 'react-router-dom'
 import {addItem} from '../store/gallery'
 import {fetchGallery} from '../store/gallery'
 
+const defaultState = {
+  title: '',
+  description: '',
+  imageUrl: '',
+  homepage: false,
+  category: ''
+}
 class AddItem extends React.Component {
   constructor() {
     super()
-    this.state = {
-      title: '',
-      description: '',
-      imageUrl: '',
-      homepage: false,
-      category: ''
-    }
+    this.state = defaultState
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault()
-    this.props.addItem(this.state)
-    this.props.fetchGallery()
+    try {
+      await this.props.addItem(this.state)
+      // this.props.fetchGallery()
+      this.setState(defaultState)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   handleChange(e) {
@@ -96,6 +102,8 @@ class AddItem extends React.Component {
             type="text"
             name="title"
             className="textbox"
+            // placeholder=""
+            value={this.state.title}
             onChange={this.handleChange}
           />
           <label htmlFor="description">Leírás: </label>
@@ -103,6 +111,8 @@ class AddItem extends React.Component {
             type="text"
             name="description"
             className="textbox_desc"
+            // placeholder=""
+            value={this.state.description}
             onChange={this.handleChange}
           />
           <label htmlFor="imageUrl">Kép url: </label>
@@ -110,6 +120,8 @@ class AddItem extends React.Component {
             type="text"
             name="imageUrl"
             className="textbox"
+            // placeholder=""
+            value={this.state.imageUrl}
             onChange={this.handleChange}
           />
           <div className="radio">
@@ -143,7 +155,9 @@ class AddItem extends React.Component {
           <textarea
             type="text"
             name="category"
+            // placeholder=""
             className="textbox"
+            value={this.state.category}
             onChange={this.handleChange}
           />
           <button type="submit" className="buttons">
