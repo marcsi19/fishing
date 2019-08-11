@@ -28,23 +28,35 @@ const UserList = props => {
                     {user.id === me.id ? (
                       ''
                     ) : (
-                      <button
-                        className="admin_b"
-                        onClick={() => {
-                          props.remove(user)
-                        }}
-                      >
-                        Delete User
-                      </button>
+                      <div>
+                        <button
+                          type="submit"
+                          className="admin_b"
+                          onClick={() => {
+                            props.remove(user)
+                          }}
+                        >
+                          Delete User
+                        </button>
+
+                        <button
+                          className="admin_b"
+                          onClick={() => {
+                            props.changeAdmin(user)
+                          }}
+                        >
+                          Change Admin Status
+                        </button>
+                      </div>
                     )}
-                    <button
+                    {/* <button
                       className="admin_b"
                       onClick={() => {
                         props.changeAdmin(user)
                       }}
                     >
                       Change Admin Status
-                    </button>
+                    </button> */}
                   </td>
                 </tr>
               </tbody>
