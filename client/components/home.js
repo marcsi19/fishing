@@ -3,20 +3,30 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import ImageGallery from 'react-image-gallery'
+import {fetchGallery} from '../store/gallery'
 
 export class Home extends Component {
+  componentDidMount() {
+    this.props.fetchGallery()
+  }
   render() {
-    const images = [
-      {
-        original: 'fishing2.jpg'
-      },
-      {
-        original: 'fishing1.jpg'
-      },
-      {
-        original: 'fishing3.jpg'
-      }
-    ]
+    const gallery = this.props.gallery || []
+    const images2 = []
+    gallery.filter(elem => elem.homepage).map(pic => {
+      images2.push({original: pic.imageUrl})
+    })
+
+    // const images = [
+    //   {
+    //     original: 'fishing2.jpg'
+    //   },
+    //   {
+    //     original: 'fishing1.jpg'
+    //   },
+    //   {
+    //     original: 'fishing3.jpg'
+    //   }
+    // ]
     return (
       <div>
         <div className="slide-showing">
@@ -24,7 +34,7 @@ export class Home extends Component {
             <a href="#features">Bemutatkozás</a>
           </div>
           <ImageGallery
-            items={images}
+            items={images2}
             showThumbnails={false}
             showFullscreenButton={false}
             showPlayButton={false}
@@ -39,4 +49,14 @@ export class Home extends Component {
   }
 }
 
-export default Home
+const mapStateToProps = state => ({
+  gallery: state.gallery.gallery
+})
+
+const mapDispatchToProps = dispatch => ({
+  fetchGallery: () => dispatch(fetchGallery())
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home))
+
+// export default Home

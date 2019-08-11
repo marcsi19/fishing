@@ -175,13 +175,9 @@ label {
   padding: 1em;
 }
 
-.gallery-pics {
-  display: flex;
-  justify-content: center;
-}
-
 .gallery-pics__item {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -212,8 +208,6 @@ label {
 .gallery-pics__item-image {
   height: 8em;
   width: 12em;
-  justify-content: center;
-  align-self: center;
 }
 .wrapper_inner {
   text-decoration: none;
@@ -311,15 +305,48 @@ form_cat {
 }
 
 .single-pic p {
+  width: 60em;
   margin-top: 1.5em;
+  margin-left: 2em;
+  margin-right: 2em;
   margin-bottom: 2em;
+  text-align: center;
+}
+@media only screen and (max-width: 1080px) {
+  #single-pic {
+    height: 30em;
+    width: 48em;
+  }
+  .single-pic p {
+    width: 48em;
+  }
 }
 
+@media only screen and (max-width: 950px) {
+  #single-pic {
+    height: 20em;
+    width: 35em;
+  }
+  .single-pic p {
+    width: 35em;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #single-pic {
+    height: 10em;
+    width: 17em;
+  }
+  .single-pic p {
+    width: 17em;
+  }
+}
 .single-pic-back {
+  margin-top: 2em;
   text-align: start;
   align-items: flex-start;
   text-decoration: none;
   color: gray;
+  /* text-align: center; */
 }
 
 .edit-but {

@@ -56,6 +56,14 @@ export const selectPicById = id => async dispatch => {
   }
 }
 
+export const selectIrasById = id => async dispatch => {
+  try {
+    const {data: pic} = await axios.get(`/api/irasok/${id}`)
+    dispatch(selectPic(pic))
+  } catch (err) {
+    console.error(err)
+  }
+}
 export const addItem = item => async dispatch => {
   try {
     const {data: added} = await axios.post(`/api/gallery`, item)

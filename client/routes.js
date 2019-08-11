@@ -10,6 +10,9 @@ import Home from './components/home'
 import AddItem from './components/addItem'
 import EditPic from './components/editPic'
 import AllUsers from './components/allUsers'
+import Irasok from './components/irasok'
+
+// import {Gallery, Irasok, , Home, AllUsers} from './components/index'
 /**
  * COMPONENT
  */
@@ -27,14 +30,16 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/home" component={UserHome} />
-        <Route exact path="/gallery" component={Gallery} />
+        <Route exact path="/galeria" component={Gallery} />
+        <Route path="/irasok" component={Irasok} />
         <Route exact path="/gallery/:id" component={SinglePic} />
         <Route exact path="/" component={Home} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/gallery/:id/editPic" component={EditPic} />
-            <Route path="/gallery" component={Gallery} />
+            <Route path="/galeria" component={Gallery} />
+            <Route path="/irasok" component={Irasok} />
             <Route path="/home" component={UserHome} />
             <Route path="/addItem" component={AddItem} />
             <Route path="/userList" component={AllUsers} />

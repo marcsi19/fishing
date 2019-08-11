@@ -20,19 +20,22 @@ async function seed() {
       imageUrl: '/fishing1.jpg',
       title: 'Fishing',
       description: `The best lake for fishing!`,
-      category: 'Galeria'
+      category: 'Galeria',
+      homepage: true
     }),
     Gallery.create({
       imageUrl: '/fishing2.jpg',
       title: 'Reel',
       description: `This is a great reel`,
-      category: 'Galeria'
+      category: 'Galeria',
+      homepage: true
     }),
     Gallery.create({
       imageUrl: '/fishing3.jpg',
       title: 'Sunset',
       description: `Beautiful sunset, beautiful day!`,
-      category: 'Galeria'
+      category: 'Galeria',
+      homepage: true
     })
   ])
 

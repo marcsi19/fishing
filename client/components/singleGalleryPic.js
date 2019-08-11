@@ -4,23 +4,22 @@ import {connect} from 'react-redux'
 import {selectPicById} from '../store/gallery'
 
 export class SinglePic extends Component {
-  constructor() {
-    super()
-  }
   componentDidMount() {
     this.props.selectPicById(this.props.match.params.id)
   }
 
   render() {
+    console.log('you MADE IT EHERE')
     const {title, description, imageUrl} = {
       ...this.props.selectedPic
     }
     const {admin} = this.props
     const selectPic = {...this.props.selectedPic}
+    console.log(selectPic.category)
     // const id = this.props.match.params.id
     return (
       <div className="single-container">
-        <Link to="/gallery" className="single-pic-back">
+        <Link to={`/${selectPic.category}`} className="single-pic-back">
           Vissza
         </Link>
 
@@ -41,7 +40,7 @@ export class SinglePic extends Component {
 
           <img id="single-pic" src={imageUrl} />
           <p>{description}</p>
-          <Link to="/gallery" className="single-pic-back">
+          <Link to={`/${selectPic.category}`} className="single-pic-back">
             Vissza
           </Link>
         </ul>

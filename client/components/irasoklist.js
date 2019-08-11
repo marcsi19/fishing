@@ -1,18 +1,18 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const GalleryList = props => {
+const IrasokList = props => {
   const gallery = props.gallery || []
   console.log('gallerylist', gallery)
   return (
     <div className="gallery-container">
-      <h2>Galéria</h2>
+      <h2>Írások</h2>
 
       <div className="gallery-pics">
         <div className="gallery-pics__item">
           {gallery
             .filter(pics => {
-              if (pics.category === 'Galeria') {
+              if (pics.category === 'Irasok') {
                 return true
               }
             })
@@ -43,4 +43,4 @@ const GalleryList = props => {
   )
 }
 
-export default GalleryList
+export default IrasokList

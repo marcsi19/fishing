@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-import Gallery from './gallery'
 export {Login, Signup} from './auth-form'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
@@ -15,19 +14,19 @@ const Navbar = ({handleClick, isLoggedIn}) => (
           <Link to="/" className="nav-main">
             Nyitólap
           </Link>
-          <Link to="/reference" className="nav-main">
+          <Link to="/referencia" className="nav-main">
             Referencia
           </Link>
-          <Link to="/kieg" className="nav-main">
+          <Link to="/fekhang" className="nav-main">
             Fékhang-kiegészítők
           </Link>
-          <Link to="/service" className="nav-main">
+          <Link to="/szerviz" className="nav-main">
             Orsó szervíz
           </Link>
           <Link to="/irasok" className="nav-main">
             Írások
           </Link>
-          <Link to="/gallery" className="nav-main">
+          <Link to="/galeria" className="nav-main">
             Galéria
           </Link>
           <Link to="/partners" className="nav-main">
@@ -59,7 +58,7 @@ const Navbar = ({handleClick, isLoggedIn}) => (
           <Link to="/irasok" className="nav-main">
             Írások
           </Link>
-          <Link to="/gallery" className="nav-main">
+          <Link to="/galeria" className="nav-main">
             Galéria
           </Link>
           <Link to="/partners" className="nav-main">
