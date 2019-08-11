@@ -36,6 +36,55 @@ async function seed() {
       description: `Beautiful sunset, beautiful day!`,
       category: 'Galeria',
       homepage: true
+    }),
+    Gallery.create({
+      imageUrl: '/fishing1.jpg',
+      title: 'Fishing',
+      description: `The best lake for fishing!`,
+      category: 'Galeria',
+      homepage: false
+    }),
+    Gallery.create({
+      imageUrl: '/fishing2.jpg',
+      title: 'Reel',
+      description: `This is a great reel`,
+      category: 'Galeria',
+      homepage: false
+    }),
+    Gallery.create({
+      imageUrl: '/fishing3.jpg',
+      title: 'Sunset',
+      description: `Beautiful sunset, beautiful day!`,
+      category: 'Galeria',
+      homepage: false
+    }),
+    Gallery.create({
+      imageUrl: '/fishing1.jpg',
+      title: 'Fishing',
+      description: `The best lake for fishing!`,
+      category: 'Irasok',
+      homepage: false
+    }),
+    Gallery.create({
+      imageUrl: '/fishing2.jpg',
+      title: 'Reel',
+      description: `This is a great reel`,
+      category: 'Szerviz',
+      homepage: false
+    }),
+    Gallery.create({
+      imageUrl: '/fishing3.jpg',
+      title: 'Sunset',
+      description: `Beautiful sunset, beautiful day!`,
+      category: 'Referencia',
+      homepage: false
+    }),
+    Gallery.create({
+      imageUrl: '/fishing2.jpg',
+      title: 'Reel',
+      description: `This is a great reel`,
+      category: 'Fekhang',
+      homepage: false
     })
   ])
 
