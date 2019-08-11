@@ -55,3 +55,14 @@ router.put('/:id', async (req, res, next) => {
     res.send('not an admin')
   }
 })
+
+router.delete('/:id', async (req, res, next) => {
+  try {
+    const picId = +req.params.id
+    const deletePic = await Gallery.destroy({where: {id: picId}})
+    res.status(204)
+    res.json(picId)
+  } catch (err) {
+    next(err)
+  }
+})

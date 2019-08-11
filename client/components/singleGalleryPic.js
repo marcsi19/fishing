@@ -1,11 +1,23 @@
 import React, {Component} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {selectPicById} from '../store/gallery'
+import {selectPicById, deletePic} from '../store/gallery'
 
 export class SinglePic extends Component {
+  constructor(props) {
+    super(props)
+    this.removePicture = this.removePicture.bind(this)
+  }
   componentDidMount() {
     this.props.selectPicById(this.props.match.params.id)
+  }
+
+  async removePicture(id) {
+    try {
+      await this.props.deletePic(id)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   render() {
@@ -43,6 +55,18 @@ export class SinglePic extends Component {
           <Link to={`/${selectPic.category}`} className="single-pic-back">
             Vissza
           </Link>
+          <h3 className="single-pic-title" />
+          {admin && (
+            <h2>
+              <Link
+                className="edit-but delete-but"
+                to={`/${selectPic.category}`}
+                onClick={() => this.removePicture(selectPic.id)}
+              >
+                Delete
+              </Link>
+            </h2>
+          )}
         </ul>
       </div>
     )
@@ -58,7 +82,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  selectPicById: id => dispatch(selectPicById(id))
+  selectPicById: id => dispatch(selectPicById(id)),
+  deletePic: id => dispatch(deletePic(id))
 })
 
 export default withRouter(

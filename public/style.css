@@ -359,6 +359,12 @@ form_cat {
   font-weight: bold;
 }
 
+.delete-but {
+  /* margin-left: 6em; */
+  color: rgb(134, 24, 24);
+  font-size: 1em;
+}
+
 /* USERLIST */
 
 .admin_b {

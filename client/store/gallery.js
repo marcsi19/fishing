@@ -5,7 +5,7 @@ import history from '../history'
  * ACTION TYPES
  */
 const GET_GALLERY = 'GET_GALLERY'
-const REMOVE_GALLERY = 'REMOVE_GALLERY'
+const REMOVE_PIC = 'REMOVE_PIC'
 const SELECT_PIC = 'SELECT_PIC'
 const POST_ITEM = 'POST_ITEM'
 const PUT_ITEM = 'PUT_ITEM'
@@ -22,7 +22,7 @@ const defaultGallery = {
  */
 const getGallery = gallery => ({type: GET_GALLERY, gallery})
 
-const removeGallery = () => ({type: REMOVE_GALLERY})
+const removepic = picId => ({type: REMOVE_PIC, picId})
 
 const selectPic = pic => ({
   type: SELECT_PIC,
@@ -83,6 +83,11 @@ export const editItem = (id, item) => async dispatch => {
   }
 }
 
+export const deletePic = picId => async dispatch => {
+  const {data: pic} = await axios.delete(`/api/gallery/${picId}`)
+  dispatch(removepic(pic))
+}
+
 /**
  * REDUCER
  */
@@ -98,8 +103,11 @@ export const galleryReducer = (state = defaultGallery, action) => {
       const itemUpdated = state.gallery.map(
         pic => (pic !== action.item ? gallery : {...gallery, ...action.item})
       )
-    // case REMOVE_GALLERY:
-    //   return defaultUser
+    case REMOVE_PIC:
+      const newGalleryArray = state.gallery.filter(
+        pic => pic.id !== action.picId
+      )
+      return {...state, gallery: newGalleryArray}
     default:
       return state
   }
