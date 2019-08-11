@@ -16,6 +16,9 @@ const IrasokList = props => {
                 return true
               }
             })
+            .sort((a, b) => {
+              return a.id - b.id
+            })
             .map(pic => {
               return (
                 <div className="wrapper" key={pic.id}>

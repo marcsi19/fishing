@@ -9,6 +9,7 @@ export class Gallery extends Component {
   componentDidMount() {
     this.props.fetchGallery()
   }
+
   render() {
     const gallery = this.props.gallery || []
 

@@ -104,6 +104,7 @@ class EditPic extends React.Component {
             name="title"
             className="textbox"
             onChange={this.handleChange}
+            defaultValue={title}
             placeholder={title}
           />
           <label htmlFor="description">Leírás: </label>
@@ -112,6 +113,7 @@ class EditPic extends React.Component {
             name="description"
             className="textbox_desc"
             onChange={this.handleChange}
+            defaultValue={description}
             placeholder={description}
           />
           <label htmlFor="imageUrl">Kép url: </label>
@@ -120,6 +122,7 @@ class EditPic extends React.Component {
             name="imageUrl"
             className="textbox"
             onChange={this.handleChange}
+            defaultValue={imageUrl}
             placeholder={imageUrl}
           />
           <div className="radio">
@@ -156,6 +159,7 @@ class EditPic extends React.Component {
             className="textbox"
             onChange={this.handleChange}
             placeholder={category}
+            defaultValue={category}
           />
           <button type="submit" className="buttons">
             Jóváhagyás

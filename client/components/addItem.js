@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import {addItem} from '../store/gallery'
+import {fetchGallery} from '../store/gallery'
 
 class AddItem extends React.Component {
   constructor() {
@@ -21,6 +22,7 @@ class AddItem extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     this.props.addItem(this.state)
+    this.props.fetchGallery()
   }
 
   handleChange(e) {
@@ -157,7 +159,8 @@ const mapDispatchToProps = dispatch => {
   return {
     addItem(pic) {
       dispatch(addItem(pic))
-    }
+    },
+    fetchGallery: () => dispatch(fetchGallery())
   }
 }
 
