@@ -296,7 +296,7 @@ form_cat {
 }
 #single-pic {
   height: 40em;
-  width: 60em;
+  width: auto;
   align-self: center;
 }
 
@@ -315,7 +315,9 @@ form_cat {
 @media only screen and (max-width: 1080px) {
   #single-pic {
     height: 30em;
+
     width: 48em;
+    width: auto;
   }
   .single-pic p {
     width: 48em;
@@ -326,6 +328,7 @@ form_cat {
   #single-pic {
     height: 20em;
     width: 35em;
+    width: auto;
   }
   .single-pic p {
     width: 35em;
@@ -334,10 +337,10 @@ form_cat {
 @media only screen and (max-width: 700px) {
   #single-pic {
     height: 10em;
-    width: 17em;
+    width: auto;
   }
   .single-pic p {
-    width: 17em;
+    width: 18em;
   }
 }
 .single-pic-back {

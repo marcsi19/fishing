@@ -12,7 +12,6 @@ export class Gallery extends Component {
   render() {
     const gallery = this.props.gallery || []
 
-    console.log('this is gallery', gallery)
     return (
       <div>
         <div className="gallery_all">
