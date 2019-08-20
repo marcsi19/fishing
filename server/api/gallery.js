@@ -31,7 +31,8 @@ router.post('/', (req, res, next) => {
       description: req.body.description,
       homepage: req.body.homepage,
       imageUrl: req.body.imageUrl,
-      category: req.body.category
+      category: req.body.category,
+      images: req.body.images
     })
       .then(newItem => res.json(newItem))
       .catch(err => next(err))

@@ -27,7 +27,7 @@ export class SinglePic extends Component {
     }
     const {admin} = this.props
     const selectPic = {...this.props.selectedPic}
-    console.log(selectPic.category)
+    console.log(selectPic.images)
     // const id = this.props.match.params.id
     return (
       <div className="single-container">

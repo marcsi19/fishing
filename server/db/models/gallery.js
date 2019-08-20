@@ -6,6 +6,9 @@ const Gallery = db.define('gallery', {
     type: Sequelize.TEXT,
     defaultValue: '/favicon.ico'
   },
+  images: {
+    type: Sequelize.ARRAY(Sequelize.STRING)
+  },
   title: {
     type: Sequelize.STRING,
     allowNull: false
