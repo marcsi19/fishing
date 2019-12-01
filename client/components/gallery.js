@@ -12,7 +12,7 @@ export class Gallery extends Component {
 
   render() {
     const gallery = this.props.gallery || []
-
+    console.log(gallery.link)
     return (
       <div>
         <div className="gallery_all">

@@ -9,7 +9,8 @@ const defaultState = {
   description: '',
   imageUrl: '',
   homepage: false,
-  category: ''
+  category: '',
+  link: ''
 }
 class AddItem extends React.Component {
   constructor() {
@@ -120,6 +121,15 @@ class AddItem extends React.Component {
             className="textbox"
             // placeholder=""
             value={this.state.imageUrl}
+            onChange={this.handleChange}
+          />
+          <label htmlFor="link">Link url: </label>
+          <input
+            type="text"
+            name="link"
+            className="textbox"
+            // placeholder=""
+            value={this.state.link}
             onChange={this.handleChange}
           />
           <div className="radio">

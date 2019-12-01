@@ -16,6 +16,9 @@ const Gallery = db.define('gallery', {
   description: {
     type: Sequelize.TEXT
   },
+  link: {
+    type: Sequelize.TEXT
+  },
   category: {
     type: Sequelize.STRING,
     validate: {

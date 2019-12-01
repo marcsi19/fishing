@@ -32,6 +32,17 @@ const ReferenciaList = props => {
                       <div className="gallery-pics__item-title">
                         {pic.title}
                       </div>
+                      <p>
+                        {' '}
+                        <a
+                          href={pic.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="single-pic-back"
+                        >
+                          {pic.link ? 'Bovebben' : ''}
+                        </a>
+                      </p>
                       {/* <div className="gallery-pics__item-desc">
                         {pic.description}
                       </div> */}

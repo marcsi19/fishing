@@ -34,7 +34,7 @@ class EditPic extends React.Component {
   }
 
   render() {
-    const {title, description, imageUrl, category} = {
+    const {title, description, imageUrl, category, link} = {
       ...this.props.pic
     }
     console.log('TITLE', this.props.pic)
@@ -108,13 +108,12 @@ class EditPic extends React.Component {
             placeholder={title}
           />
           <label htmlFor="description">Leírás: </label>
-          <input
-            type="text"
+          <textarea
             name="description"
             className="textbox_desc"
             onChange={this.handleChange}
-            defaultValue={description}
-            placeholder={description}
+            value={this.state.description || description}
+            // placeholder={description}
           />
           <label htmlFor="imageUrl">Kép url: </label>
           <input
@@ -124,6 +123,15 @@ class EditPic extends React.Component {
             onChange={this.handleChange}
             defaultValue={imageUrl}
             placeholder={imageUrl}
+          />
+          <label htmlFor="link">Link url: </label>
+          <input
+            type="text"
+            name="link"
+            className="textbox"
+            onChange={this.handleChange}
+            defaultValue={link}
+            placeholder={link}
           />
           <div className="radio">
             <p>Boritokép</p>

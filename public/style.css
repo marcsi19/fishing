@@ -20,7 +20,8 @@ nav a {
   margin-left: 2em;
 }
 
-nav {
+/* nav  */
+.line_menu {
   background: white;
   background-attachment: fixed;
   position: fixed;
@@ -56,6 +57,23 @@ nav {
 .nav-main:hover,
 .nav-main:active {
   border-bottom: 2px solid #0c0c0b;
+}
+
+/* .line_menu {
+  margin-top: 2em;
+} */
+
+.drop_menu {
+  visibility: hidden;
+}
+@media only screen and (max-width: 950px) {
+  .drop_menu {
+    visibility: visible;
+    color: gray;
+  }
+  .line_menu {
+    visibility: hidden;
+  }
 }
 
 /* FOOTER */
@@ -196,13 +214,18 @@ label {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  /* margin-right: auto;
+  margin-left: auto; */
 }
 
 .gallery-pics__item {
   display: flex;
+
   justify-content: center;
   align-items: center;
   margin: 1em;
+  /* margin-right: auto;
+  margin-left: auto; */
 }
 .gallery-pics__item .wrapper {
   width: 25%;

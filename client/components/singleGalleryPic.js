@@ -21,13 +21,12 @@ export class SinglePic extends Component {
   }
 
   render() {
-    console.log('you MADE IT EHERE')
-    const {title, description, imageUrl} = {
+    const {title, description, imageUrl, link} = {
       ...this.props.selectedPic
     }
     const {admin} = this.props
     const selectPic = {...this.props.selectedPic}
-    console.log(selectPic.images)
+    console.log(description)
     // const id = this.props.match.params.id
     return (
       <div className="single-container">
@@ -51,7 +50,24 @@ export class SinglePic extends Component {
           </h3>
 
           <img id="single-pic" src={imageUrl} />
-          <p>{description}</p>
+
+          <p>
+            {' '}
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="single-pic-back"
+            >
+              {link ? 'Bovebben' : ''}
+            </a>
+          </p>
+          {/* <p>{description}</p> */}
+          <div>
+            {description
+              ? description.split('\n').map((item, i) => <p key={i}>{item}</p>)
+              : ''}
+          </div>
 
           <h3 className="single-pic-title" />
           {admin ? (
